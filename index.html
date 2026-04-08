@@ -1,68 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Sumaiyya Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Sumaiyya Portfolio</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <nav>
-    <h2>Sumaiyya Nadaf</h2>
+    <h2>Sumaiyya</h2>
+    <div>
+        <a href="#about">About</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </div>
 </nav>
 
+<!-- HOME -->
 <section class="home">
-    <img src="assets/images/photo.jpg" class="profile">
-    <h1>Hi, I'm Sumaiyya</h1>
-    <p>Motivated first-year BTech student passionate about software development and technology.</p>
+    <img src="assets/images/profile.jpg" class="profile">
+    <h1>Hi, I'm Sumaiyya Nadaf</h1>
+    <p>Motivated first-year BTech student passionate about software development, AI, and web technologies.</p>
 </section>
 
-<section>
+<!-- ABOUT -->
+<section id="about">
     <h2>About Me</h2>
     <p><b>Education:</b> MIT-VPU, B.Tech CSE</p>
     <p><b>Interests:</b> Software Development, Web Development, Artificial Intelligence</p>
-    <p><b>Goal:</b> To become a skilled software developer and build impactful projects.</p>
+    <p><b>Goal:</b> To become a skilled software developer with strong problem-solving abilities and build impactful real-world projects.</p>
 </section>
 
-<section>
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
     <h2>Achievements</h2>
-    <div class="card"><h3>Coursera Certifications</h3><p>Completed courses to build strong skills.</p></div>
-    <div class="card"><h3>Cisco NetAcad</h3><p>Learned networking concepts.</p></div>
-    <div class="card"><h3>Academic Participation</h3><p>Active in presentations and assignments.</p></div>
+
+    <div class="card">
+        <h3>Coursera Certifications</h3>
+        <p>Completed multiple courses from Coursera to build technical and professional skills.</p>
+    </div>
+
+    <div class="card">
+        <h3>Cisco NetAcad Certifications</h3>
+        <p>Learned networking concepts and technical fundamentals through Cisco Networking Academy.</p>
+    </div>
+
+    <div class="card">
+        <h3>Academic Learning & Participation</h3>
+        <p>Actively participated in academic activities, assignments, and presentations to improve knowledge and communication.</p>
+    </div>
+
 </section>
 
-<section>
+<!-- PROJECTS -->
+<section id="projects">
     <h2>Projects</h2>
-    <div class="card"><h3>Design Thinking Project</h3><p>Real-world problem solving.</p></div>
-    <div class="card"><h3>AI4A Project</h3><p>AI concepts (in progress).</p></div>
-    <div class="card"><h3>ACE Project</h3><p>Practical implementation.</p></div>
+
+    <div class="card">
+        <h3>Design Thinking Project</h3>
+        <p>Worked on identifying real-world problems and developing user-focused solutions using structured thinking.</p>
+    </div>
+
+    <div class="card">
+        <h3>AI4A Project (In Progress)</h3>
+        <p>Currently learning Artificial Intelligence concepts and applying them to real-world scenarios.</p>
+    </div>
+
+    <div class="card">
+        <h3>ACE Project (In Progress)</h3>
+        <p>Applying theoretical knowledge into practical implementation to improve technical skills.</p>
+    </div>
+
 </section>
 
-<section>
+<!-- SKILLS -->
+<section id="skills">
     <h2>Skills</h2>
-    <div class="card"><h3>Technical</h3><p>C, DSA (learning)</p></div>
-    <div class="card"><h3>Tools</h3><p>GitHub, Coursera</p></div>
-    <div class="card"><h3>Soft Skills</h3><p>Consistency, learning attitude</p></div>
+
+    <div class="card">
+        <h3>Technical Skills</h3>
+        <p>C Programming (Basics), Problem Solving, Data Structures (Learning Phase)</p>
+    </div>
+
+    <div class="card">
+        <h3>Tools & Platforms</h3>
+        <p>GitHub, Coursera, Cisco NetAcad, Yuva AI</p>
+    </div>
+
+    <div class="card">
+        <h3>Soft Skills</h3>
+        <p>Willingness to learn, consistency, self-awareness, improving communication skills</p>
+    </div>
+
 </section>
 
+<!-- WHY HIRE ME -->
 <section>
     <h2>Why Hire Me?</h2>
-    <p>Dedicated, hardworking, eager to grow and improve continuously.</p>
+    <p>I am a dedicated and hardworking individual who is continuously improving my technical skills. I am eager to learn, adapt, and grow into a skilled software developer. I am committed to giving my best in every opportunity.</p>
 </section>
 
-<section>
+<!-- CONTACT -->
+<section id="contact">
     <h2>Contact</h2>
     <p>Email: sumaiyyanadaf99@gmail.com</p>
     <p>Phone: 9309883683</p>
+    <p>LinkedIn: Sumaiyya Nadaf</p>
+    <p>GitHub: github.com/yourusername</p>
 </section>
 
-<button onclick="darkMode()">Toggle Dark Mode</button>
+<!-- BUTTON -->
+<button onclick="darkMode()">🌙 Toggle Mode</button>
 
-<script>
-function darkMode() {
-    document.body.classList.toggle("dark");
-}
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
