@@ -1,8 +1,8 @@
 body {
-    font-family: 'Poppins', sans-serif;
     margin: 0;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-    color: #333;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
 }
 
 /* NAVBAR */
@@ -10,15 +10,13 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 15px 30px;
-    background: rgba(255,255,255,0.2);
-    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.3);
 }
 
 nav a {
     margin: 0 10px;
+    color: white;
     text-decoration: none;
-    color: black;
-    font-weight: bold;
 }
 
 /* HOME */
@@ -39,40 +37,37 @@ section {
     text-align: center;
 }
 
+/* GRID */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 /* CARDS */
 .card {
-    background: rgba(255,255,255,0.3);
-    margin: 15px auto;
+    background: rgba(255,255,255,0.2);
+    margin: 15px;
     padding: 20px;
-    width: 80%;
+    width: 250px;
     border-radius: 15px;
     backdrop-filter: blur(10px);
     transition: 0.4s;
 }
 
 .card:hover {
-    transform: scale(1.05);
-    background: white;
+    transform: scale(1.1);
+    background: rgba(255,255,255,0.4);
 }
 
-/* FADE ANIMATION */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 1s ease forwards;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* HIGHLIGHT */
+.highlight {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
 }
 
 /* BUTTON */
 button {
-    display: block;
-    margin: 30px auto;
+    margin: 30px;
     padding: 12px 20px;
     border: none;
     border-radius: 20px;
@@ -83,5 +78,4 @@ button {
 /* DARK MODE */
 .dark {
     background: #111;
-    color: white;
 }
