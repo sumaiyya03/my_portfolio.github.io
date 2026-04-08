@@ -1,0 +1,1 @@
+Replace profile.jpg and add your certificates in assets/images folder.
