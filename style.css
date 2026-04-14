@@ -423,4 +423,5 @@ body.dark footer { background: #111; }
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
-}
+                                 }        
+
