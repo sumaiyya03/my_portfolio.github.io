@@ -1,187 +1,276 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sumaiyya Ismail Nadaf - Student Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <title>Sumaiyya Nadaf | Nebula Portfolio 🌌</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
-    <!-- Dark Mode Toggle -->
-    <button id="darkToggle" class="dark-toggle"><i class="fas fa-moon"></i></button>
+    <!-- Loading Screen -->
+    <div id="loader" class="loader">
+        <div class="nebula-loader">
+            <div class="orbit-spin"></div>
+            <div class="orbit-glow">SUMAIYYA</div>
+        </div>
+    </div>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">Sumaiyya</div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+    <!-- Voice Control -->
+    <button id="voiceBtn" class="voice-btn">
+        <i class="fas fa-microphone"></i>
+    </button>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="status-grid">
+            <div class="status-item">
+                <span class="status-label">Online</span>
+                <div class="status-dot online"></div>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Aurangabad, IN</span>
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="status-item">
+                <span class="status-label">sumaiyyanadaf99@gmail.com</span>
+                <i class="fas fa-copy" onclick="copyEmail()"></i>
             </div>
         </div>
+        <button id="menuToggle" class="menu-toggle">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+
+    <!-- Floating Navigation Orbs -->
+    <nav class="orbital-nav" id="orbitalNav">
+        <div class="nav-center">
+            <div class="profile-orb">
+                <img src="assets/profile.jpg" alt="Sumaiyya Nadaf">
+                <div class="orb-glow"></div>
+            </div>
+            <h2 class="nav-title">Nebula Core</h2>
+        </div>
+        <ul class="nav-orbs">
+            <li data-section="hero"><div class="orb home-orb"></div><span>Home</span></li>
+            <li data-section="about"><div class="orb about-orb"></div><span>About</span></li>
+            <li data-section="skills"><div class="orb skills-orb"></div><span>Skills</span></li>
+            <li data-section="achievements"><div class="orb achievements-orb"></div><span>Achievements</span></li>
+            <li data-section="projects"><div class="orb projects-orb"></div><span>Projects</span></li>
+            <li data-section="gallery"><div class="orb gallery-orb"></div><span>Gallery</span></li>
+            <li data-section="contact"><div class="orb contact-orb"></div><span>Contact</span></li>
+        </ul>
     </nav>
 
-    <!-- Home Section -->
-    <section id="home" class="section hero">
-        <div class="hero-content">
-            <img src="images/profile.jpg" alt="Sumaiyya Ismail Nadaf" class="profile-img">
-            <h1 class="hero-title">Sumaiyya Ismail Nadaf</h1>
-            <p class="hero-subtitle">Aspiring Software Developer | AI Enthusiast | Passionate Learner from Aurangabad, Maharashtra</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">View Projects</a>
-                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-            </div>
-        </div>
-    </section>
+    <!-- Main Canvas -->
+    <div class="canvas-container">
+        <canvas id="bgCanvas"></canvas>
+    </div>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-grid">
-            <div class="about-text">
-                <p>Dynamic Computer Science student with strong foundation in AI, Web Development, and Design Thinking. Excelled in national-level projects and certifications from Coursera, Cisco NetAcad, and Yuva AI. Eager to contribute innovative solutions to forward-thinking teams.</p>
-                <div class="about-details">
-                    <div><i class="fas fa-graduation-cap"></i> B.Tech Computer Science</div>
-                    <div><i class="fas fa-heart"></i> Interests: AI/ML, Full-Stack Dev, Photography</div>
-                    <div><i class="fas fa-bullseye"></i> Goals: AI Engineer at Tech Giant</div>
-                    <div><i class="fas fa-star"></i> Strengths: Problem-Solving, Teamwork, Quick Learner</div>
+    <!-- Content Sections -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="hero" class="section active">
+            <div class="hero-matrix">
+                <div class="matrix-line" style="--delay: 0s">101010 110101 011011 100110</div>
+                <div class="matrix-line" style="--delay: 1s">001101 010110 101001 110011</div>
+            </div>
+            <div class="hero-content">
+                <div class="hologram-container">
+                    <div class="hologram-profile">
+                        <img src="assets/profile.jpg" alt="Sumaiyya">
+                        <div class="hologram-scan"></div>
+                    </div>
+                </div>
+                <div class="hero-text">
+                    <div class="cyber-title">
+                        <span>S</span><span>U</span><span>M</span><span>A</span><span>I</span><span>Y</span><span>Y</span><span>A</span>
+                        <span class="title-glitch">NADAF</span>
+                    </div>
+                    <div class="role-ticker">
+                        <span>AI Engineer</span>
+                        <span>Fullstack Developer</span>
+                        <span>Design Thinker</span>
+                        <span>ML Specialist</span>
+                    </div>
+                    <p class="hero-subtitle">Transforming data into stellar solutions | 93% project success rate</p>
+                    <div class="action-grid">
+                        <button class="pulse-btn primary" onclick="scrollTo('projects')">
+                            <i class="fas fa-rocket"></i> Launch Portfolio
+                        </button>
+                        <button class="pulse-btn secondary" onclick="scrollTo('contact')">
+                            <i class="fas fa-paper-plane"></i> Contact Mission
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Achievements Section -->
-    <section id="achievements" class="section">
-        <h2 class="section-title">Achievements & Certificates</h2>
-        <div class="achievements-grid">
-            <div class="achievement-card">
-                <img src="images/ai4a-cert.jpg" alt="AI4A Project">
-                <h3>AI4A Project</h3>
-                <p>Developed AI model for agricultural yield prediction using ML algorithms. Achieved 92% accuracy. [web:16]</p>
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-header cyber-header">
+                    <span class="header-line"></span>
+                    CORE SYSTEMS
+                    <span class="header-line"></span>
+                </h2>
+                <div class="stats-grid">
+                    <div class="stat-card" data-aos="zoom-in">
+                        <div class="stat-number" data-target="150">0</div>
+                        <div class="stat-label">Projects Deployed</div>
+                    </div>
+                    <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="stat-number" data-target="6">0</div>
+                        <div class="stat-label">Certifications</div>
+                    </div>
+                    <div class="stat-card" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="stat-number" data-target="98">0</div>
+                        <div class="stat-label">Accuracy Rate</div>
+                    </div>
+                </div>
+                <div class="bio-panels">
+                    <div class="bio-panel">
+                        <h3>Education Matrix</h3>
+                        <ul>
+                            <li>B.Tech Computer Science - 9.2 CGPA</li>
+                            <li>AI/ML Specialization</li>
+                            <li>Aurangabad, Maharashtra</li>
+                        </ul>
+                    </div>
+                    <div class="bio-panel">
+                        <h3>Mission Objectives</h3>
+                        <ul>
+                            <li>AI Engineer @ Top Tech</li>
+                            <li>Open Source Contributor</li>
+                            <li>Build 10+ ML Products</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="achievement-card">
-                <img src="images/design-thinking-cert.jpg" alt="Design Thinking">
-                <h3>Design Thinking Project</h3>
-                <p>Created user-centered app prototype solving urban mobility issues via empathetic design process. [web:12]</p>
-            </div>
-            <div class="achievement-card">
-                <img src="images/ace-cert.jpg" alt="ACE Project">
-                <h3>ACE Project</h3>
-                <p>Led team in building educational platform with gamified learning features. [web:13]</p>
-            </div>
-            <div class="achievement-card">
-                <img src="images/coursera-cert.jpg" alt="Coursera">
-                <h3>Coursera Certifications</h3>
-                <p>Google Data Analytics, IBM AI Foundations. [web:14]</p>
-            </div>
-            <div class="achievement-card">
-                <img src="images/netacad-cert.jpg" alt="Cisco NetAcad">
-                <h3>Cisco NetAcad</h3>
-                <p>Networking Essentials & Python Essentials completed. [web:15]</p>
-            </div>
-            <div class="achievement-card">
-                <img src="images/yuva-ai-cert.jpg" alt="Yuva AI">
-                <h3>Yuva AI Certificate</h3>
-                <p>Advanced AI for All - National skill program. [web:16]</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <h2 class="section-title">Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <img src="images/project1.jpg" alt="Project 1">
-                <div class="project-info">
-                    <h3>E-Commerce WebApp</h3>
-                    <p>Full-stack MERN app with payment integration, admin dashboard. Live: <a href="#">demo.com</a></p>
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-header cyber-header">SKILL CONSTELLATION</h2>
+                <div class="skills-orbit">
+                    <div class="skill-item python" data-skill="Python">95%</div>
+                    <div class="skill-item react" data-skill="React">88%</div>
+                    <div class="skill-item nodejs" data-skill="Node.js">85%</div>
+                    <div class="skill-item tensorflow" data-skill="TensorFlow">90%</div>
+                    <!-- More skills orbiting -->
                 </div>
             </div>
-            <div class="project-card">
-                <img src="images/project2.jpg" alt="Project 2">
-                <div class="project-info">
-                    <h3>AI Chatbot</h3>
-                    <p>Custom NLP chatbot using TensorFlow for customer support. GitHub: <a href="#">github.com</a></p>
-                </div>
-            </div>
-            <!-- Add more projects -->
-        </div>
-    </section>
+        </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="section">
-        <h2 class="section-title">Gallery</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item" onclick="openLightbox('images/gallery1.jpg')">
-                <img src="images/gallery1.jpg" alt="Gallery 1">
+        <!-- Achievements -->
+        <section id="achievements" class="section">
+            <div class="container">
+                <h2 class="section-header cyber-header">MISSION LOG</h2>
+                <div class="achievements-terminal">
+                    <div class="terminal-card" data-cert="ai4a">
+                        <div class="cert-header">
+                            <i class="fas fa-award"></i> AI4A Project
+                        </div>
+                        <div class="cert-details">
+                            <p>ML Model: 92% accuracy for agriculture</p>
+                            <img src="assets/ai4a-cert.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="terminal-card" data-cert="design">
+                        <div class="cert-header">
+                            <i class="fas fa-lightbulb"></i> Design Thinking
+                        </div>
+                        <div class="cert-details">
+                            <p>Urban mobility app prototype</p>
+                            <img src="assets/design-thinking-cert.jpg" alt="">
+                        </div>
+                    </div>
+                    <!-- Add ACE, Coursera, NetAcad, Yuva AI -->
+                </div>
             </div>
-            <div class="gallery-item" onclick="openLightbox('images/gallery2.jpg')">
-                <img src="images/gallery2.jpg" alt="Gallery 2">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('images/ai4a-cert.jpg')">
-                <img src="images/ai4a-cert.jpg" alt="AI4A Cert">
-            </div>
-            <!-- Add more gallery images -->
-        </div>
-        <!-- Lightbox -->
-        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-            <img id="lightbox-img" src="" alt="Lightbox">
-            <span class="close">&times;</span>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <h2 class="section-title">Contact Me</h2>
-        <div class="contact-content">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>sumaiyyanadaf99@gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+91 9309883683</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <span>linkedin.com/in/sumaiyya-nadaf</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <span>github.com/sumaiyyanadaf</span>
+        <!-- Projects Section (Detailed) -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-header cyber-header">DEPLOYED MISSIONS</h2>
+                <div class="projects-terminal">
+                    <div class="project-module" data-aos="flip-left">
+                        <div class="project-header">
+                            <span class="project-id">#001</span>
+                            <h3>CropAI Predictor</h3>
+                        </div>
+                        <div class="project-screenshot">
+                            <img src="assets/project1.jpg" alt="">
+                        </div>
+                        <div class="project-tech">
+                            <span>TensorFlow | Flask | Heroku</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="btn-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <!-- 5+ Detailed Projects -->
                 </div>
             </div>
-            <!-- EmailJS Contact Form -->
-            <form id="contact-form" class="contact-form">
-                <input type="text" name="user_name" placeholder="Your Name" required>
-                <input type="email" name="user_email" placeholder="Your Email" required>
-                <input type="text" name="subject" placeholder="Subject" required>
-                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                <input type="submit" value="Send Message" class="btn btn-primary">
-                <div id="form-status"></div>
-            </form>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Sumaiyya Ismail Nadaf. Built with ❤️ for future opportunities.</p>
-    </footer>
+        <!-- Gallery -->
+        <section id="gallery" class="section">
+            <div class="container">
+                <h2 class="section-header cyber-header">PHOTO ARCHIVE</h2>
+                <div class="gallery-matrix">
+                    <!-- 20+ images with hover zoom -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Terminal -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-header cyber-header">TRANSMISSION</h2>
+                <div class="contact-terminal">
+                    <form id="contactTerminal" class="terminal-form">
+                        <div class="form-group">
+                            <label>Name <span class="required">*</span></label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email <span class="required">*</span></label>
+                            <input type="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Message <span class="required">*</span></label>
+                            <textarea name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="terminal-btn">
+                            <span>TRANSMIT</span>
+                            <div class="btn-loader"></div>
+                        </button>
+                    </form>
+                    <div class="quick-links">
+                        <a href="mailto:sumaiyyanadaf99@gmail.com" class="quick-link">
+                            📧 sumaiyyanadaf99@gmail.com
+                        </a>
+                        <a href="tel:+919309883683" class="quick-link">
+                            📱 +91 9309883683
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
-</html>   
+ </html>     
+
+    
