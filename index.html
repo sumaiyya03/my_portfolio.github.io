@@ -3,228 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sumaiyya Ismail Nadaf - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Sumaiyya Ismail Nadaf - Galaxy Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
 </head>
 <body>
+    <!-- Galaxy Stars Background -->
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+    <div class="nebula"></div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">
-                <h3>Sumaiyya Nadaf</h3>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#achievements" class="nav-link">Achievements</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#gallery" class="nav-link">Gallery</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+            <div class="nav-logo">S<span class="neon">I</span>N</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="theme-toggle">
-                <i class="fas fa-sun"></i>
+            <div class="dark-toggle">
+                <i class="fas fa-moon" id="darkIcon"></i>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <!-- Home Section -->
+    <section id="home" class="section hero">
         <div class="hero-content">
-            <div class="hero-image">
-                <img src="images/profile.jpg" alt="Sumaiyya Ismail Nadaf">
-            </div>
-            <div class="hero-text">
-                <h1 class="hero-title">Sumaiyya Ismail Nadaf</h1>
-                <p class="hero-subtitle">
-                    Computer Science Student | AI & Web Developer<br>
-                    Passionate about creating impactful technology solutions
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-outline">Contact Me</a>
-                </div>
+            <img src="assets/profile.jpg" alt="Sumaiyya Ismail Nadaf" class="profile-img">
+            <h1 class="neon-text">Sumaiyya <span class="gradient-text">Ismail Nadaf</span></h1>
+            <p class="intro">Motivated first-year BTech student with a strong interest in software development and technology. Eager to learn programming, build real-world projects, and grow into a skilled full-stack developer.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <h3>Hi, I'm Sumaiyya</h3>
-                    <p>
-                        I'm a dedicated Computer Science student from Aurangabad, Maharashtra, 
-                        with a passion for Artificial Intelligence, Web Development, and innovative problem-solving. 
-                        I've completed national-level projects and earned certifications from leading platforms.
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <span class="stat-number">9.2</span>
-                            <span class="stat-label">CGPA</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">6+</span>
-                            <span class="stat-label">Certifications</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">5+</span>
-                            <span class="stat-label">Projects</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-skills">
-                    <h4>Skills & Interests</h4>
-                    <div class="skills-grid">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Machine Learning</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Design Thinking</span>
-                    </div>
-                </div>
+        <h2 class="section-title neon">About Me</h2>
+        <div class="about-grid">
+            <div class="about-card glow">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Education</h3>
+                <p>MIT-VPU, B.Tech CSE</p>
+            </div>
+            <div class="about-card glow">
+                <i class="fas fa-heart"></i>
+                <h3>Interests</h3>
+                <p>Software Development, Web Development, Artificial Intelligence</p>
+            </div>
+            <div class="about-card glow">
+                <i class="fas fa-bullseye"></i>
+                <h3>Goals</h3>
+                <p>Become a skilled software developer, secure position in reputed tech company</p>
+            </div>
+            <div class="about-card glow">
+                <i class="fas fa-star"></i>
+                <h3>Strengths</h3>
+                <p>Willingness to learn, Consistency, Problem-solving</p>
+            </div>
+        </div>
+        <div class="skills-section">
+            <h3 class="neon">Skills</h3>
+            <div class="skills-grid">
+                <span class="skill-tag">C Programming (Basics)</span>
+                <span class="skill-tag">Data Structures (Learning)</span>
+                <span class="skill-tag">GitHub</span>
+                <span class="skill-tag">Problem Solving</span>
             </div>
         </div>
     </section>
 
     <!-- Achievements Section -->
     <section id="achievements" class="section">
-        <div class="container">
-            <h2 class="section-title">Achievements & Certifications</h2>
-            <div class="achievements-grid">
-                <div class="achievement-item">
-                    <img src="images/ai4a-cert.jpg" alt="AI4A Certificate" class="achievement-img">
-                    <div class="achievement-info">
-                        <h4>AI4A Project Certificate</h4>
-                        <p>Developed ML model for agricultural yield prediction achieving 92% accuracy</p>
-                    </div>
-                </div>
-                <div class="achievement-item">
-                    <img src="images/design-thinking-cert.jpg" alt="Design Thinking">
-                    <div class="achievement-info">
-                        <h4>Design Thinking Project</h4>
-                        <p>Created user-centered prototype solving urban mobility challenges</p>
-                    </div>
-                </div>
-                <div class="achievement-item">
-                    <img src="images/ace-cert.jpg" alt="ACE Project">
-                    <div class="achievement-info">
-                        <h4>ACE Project</h4>
-                        <p>Led development of gamified educational platform</p>
-                    </div>
-                </div>
-                <div class="achievement-item">
-                    <img src="images/coursera-cert.jpg" alt="Coursera">
-                    <div class="achievement-info">
-                        <h4>Coursera Certifications</h4>
-                        <p>Google Data Analytics & IBM AI Foundations</p>
-                    </div>
-                </div>
-                <div class="achievement-item">
-                    <img src="images/netacad-cert.jpg" alt="Cisco NetAcad">
-                    <div class="achievement-info">
-                        <h4>Cisco Networking Academy</h4>
-                        <p>Networking Essentials & Python completed</p>
-                    </div>
-                </div>
-                <div class="achievement-item">
-                    <img src="images/yuva-ai-cert.jpg" alt="Yuva AI">
-                    <div class="achievement-info">
-                        <h4>Yuva AI Certificate</h4>
-                        <p>National AI skill development program</p>
-                    </div>
-                </div>
+        <h2 class="section-title neon">Achievements</h2>
+        <div class="achievements-grid">
+            <div class="achievement-card glow">
+                <img src="assets/coursera-cert.jpg" alt="Coursera Certifications">
+                <h3>Coursera Certifications</h3>
+                <p>Successfully completed online certification courses from Coursera, gaining knowledge in various technical and professional domains.</p>
+            </div>
+            <div class="achievement-card glow">
+                <img src="assets/netacad-cert.jpg" alt="Cisco NetAcad">
+                <h3>Cisco NetAcad Certifications</h3>
+                <p>Completed courses from Cisco NetAcad, enhancing understanding of networking concepts.</p>
+            </div>
+            <div class="achievement-card glow">
+                <img src="assets/yuva-ai-cert.jpg" alt="Yuva AI">
+                <h3>Yuva AI Certificate</h3>
+                <p>Participated in Yuva AI program, learning AI fundamentals.</p>
+            </div>
+            <div class="achievement-card glow">
+                <img src="assets/design-thinking.jpg" alt="Design Thinking Project">
+                <h3>Design Thinking Project</h3>
+                <p>Applied design thinking methodology to identify real-world problems and develop innovative solutions.</p>
+            </div>
+            <div class="achievement-card glow">
+                <img src="assets/ai4a.jpg" alt="AI4A Project">
+                <h3>AI4A Project (In Progress)</h3>
+                <p>Exploring AI concepts and applying them to real-world scenarios.</p>
+            </div>
+            <div class="achievement-card glow">
+                <img src="assets/ace.jpg" alt="ACE Project">
+                <h3>ACE Project (In Progress)</h3>
+                <p>Applying theoretical concepts into practical implementation.</p>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/project1.jpg" alt="Project 1">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="link-demo"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="link-github"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Crop Yield Predictor</h3>
-                        <p>ML model using TensorFlow achieving 92% accuracy for agricultural predictions</p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>TensorFlow</span>
-                            <span>Flask</span>
-                        </div>
-                    </div>
+        <h2 class="section-title neon">Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card glow">
+                <img src="assets/project1.jpg" alt="Project 1">
+                <div class="project-info">
+                    <h3>AI4A Project</h3>
+                    <p>AI application for real-world problem solving (In Progress)</p>
+                    <a href="#" class="btn btn-primary">View Project</a>
                 </div>
-                <!-- Add 4 more detailed projects -->
+            </div>
+            <div class="project-card glow">
+                <img src="assets/project2.jpg" alt="Project 2">
+                <div class="project-info">
+                    <h3>Design Thinking Solution</h3>
+                    <p>Innovative solution developed using design thinking process.</p>
+                    <a href="#" class="btn btn-primary">View Project</a>
+                </div>
+            </div>
+            <div class="project-card glow">
+                <img src="assets/project3.jpg" alt="Project 3">
+                <div class="project-info">
+                    <h3>ACE Implementation</h3>
+                    <p>Practical implementation of academic concepts (In Progress)</p>
+                    <a href="#" class="btn btn-primary">View Project</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Gallery Section -->
     <section id="gallery" class="section">
-        <div class="container">
-            <h2 class="section-title">Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('images/gallery1.jpg');"></div>
-                <div class="gallery-item" style="background-image: url('images/gallery2.jpg');"></div>
-                <div class="gallery-item" style="background-image: url('images/ai4a-cert.jpg');"></div>
-                <!-- Add all your photos -->
-            </div>
+        <h2 class="section-title neon">Gallery</h2>
+        <div class="gallery-grid">
+            <a href="assets/coursera-cert.jpg" data-lightbox="gallery" data-title="Coursera Certification">
+                <img src="assets/coursera-cert-thumb.jpg" alt="Coursera">
+            </a>
+            <a href="assets/netacad-cert.jpg" data-lightbox="gallery" data-title="Cisco NetAcad">
+                <img src="assets/netacad-cert-thumb.jpg" alt="NetAcad">
+            </a>
+            <a href="assets/yuva-ai-cert.jpg" data-lightbox="gallery" data-title="Yuva AI">
+                <img src="assets/yuva-ai-cert-thumb.jpg" alt="Yuva AI">
+            </a>
+            <a href="assets/profile.jpg" data-lightbox="gallery" data-title="Profile Photo">
+                <img src="assets/profile-thumb.jpg" alt="Profile">
+            </a>
+            <!-- Add more gallery images here -->
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <h4>Email</h4>
-                        <p>sumaiyyanadaf99@gmail.com</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <h4>Phone</h4>
-                        <p>+91 9309883683</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <h4>LinkedIn</h4>
-                        <p>/in/sumaiyya-nadaf</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <h4>GitHub</h4>
-                        <p>github.com/sumaiyyanadaf</p>
-                    </div>
+        <h2 class="section-title neon">Contact</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>sumaiyyanadaf99@gmail.com</span>
                 </div>
-                <form id="contactForm" class="contact-form">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <input type="text" name="subject" placeholder="Subject" required>
-                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+91 9309883683</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>sumaiyya nadaf</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <span>sumaiyyanadaf99</span>
+                </div>
             </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
         </div>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script src="script.js"></script>
 </body>
-                                                                    </html>
-                          
+</html>                   
