@@ -3,274 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sumaiyya Nadaf | Nebula Portfolio 🌌</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- Three.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <!-- EmailJS -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <title>Sumaiyya Ismail Nadaf - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div id="loader" class="loader">
-        <div class="nebula-loader">
-            <div class="orbit-spin"></div>
-            <div class="orbit-glow">SUMAIYYA</div>
-        </div>
-    </div>
-
-    <!-- Voice Control -->
-    <button id="voiceBtn" class="voice-btn">
-        <i class="fas fa-microphone"></i>
-    </button>
-
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="status-grid">
-            <div class="status-item">
-                <span class="status-label">Online</span>
-                <div class="status-dot online"></div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h3>Sumaiyya Nadaf</h3>
             </div>
-            <div class="status-item">
-                <span class="status-label">Aurangabad, IN</span>
-                <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <div class="status-item">
-                <span class="status-label">sumaiyyanadaf99@gmail.com</span>
-                <i class="fas fa-copy" onclick="copyEmail()"></i>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <i class="fas fa-sun"></i>
             </div>
         </div>
-        <button id="menuToggle" class="menu-toggle">
-            <span></span><span></span><span></span>
-        </button>
-    </div>
-
-    <!-- Floating Navigation Orbs -->
-    <nav class="orbital-nav" id="orbitalNav">
-        <div class="nav-center">
-            <div class="profile-orb">
-                <img src="assets/profile.jpg" alt="Sumaiyya Nadaf">
-                <div class="orb-glow"></div>
-            </div>
-            <h2 class="nav-title">Nebula Core</h2>
-        </div>
-        <ul class="nav-orbs">
-            <li data-section="hero"><div class="orb home-orb"></div><span>Home</span></li>
-            <li data-section="about"><div class="orb about-orb"></div><span>About</span></li>
-            <li data-section="skills"><div class="orb skills-orb"></div><span>Skills</span></li>
-            <li data-section="achievements"><div class="orb achievements-orb"></div><span>Achievements</span></li>
-            <li data-section="projects"><div class="orb projects-orb"></div><span>Projects</span></li>
-            <li data-section="gallery"><div class="orb gallery-orb"></div><span>Gallery</span></li>
-            <li data-section="contact"><div class="orb contact-orb"></div><span>Contact</span></li>
-        </ul>
     </nav>
 
-    <!-- Main Canvas -->
-    <div class="canvas-container">
-        <canvas id="bgCanvas"></canvas>
-    </div>
-
-    <!-- Content Sections -->
-    <main class="main-content">
-        <!-- Hero Section -->
-        <section id="hero" class="section active">
-            <div class="hero-matrix">
-                <div class="matrix-line" style="--delay: 0s">101010 110101 011011 100110</div>
-                <div class="matrix-line" style="--delay: 1s">001101 010110 101001 110011</div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-image">
+                <img src="images/profile.jpg" alt="Sumaiyya Ismail Nadaf">
             </div>
-            <div class="hero-content">
-                <div class="hologram-container">
-                    <div class="hologram-profile">
-                        <img src="assets/profile.jpg" alt="Sumaiyya">
-                        <div class="hologram-scan"></div>
-                    </div>
-                </div>
-                <div class="hero-text">
-                    <div class="cyber-title">
-                        <span>S</span><span>U</span><span>M</span><span>A</span><span>I</span><span>Y</span><span>Y</span><span>A</span>
-                        <span class="title-glitch">NADAF</span>
-                    </div>
-                    <div class="role-ticker">
-                        <span>AI Engineer</span>
-                        <span>Fullstack Developer</span>
-                        <span>Design Thinker</span>
-                        <span>ML Specialist</span>
-                    </div>
-                    <p class="hero-subtitle">Transforming data into stellar solutions | 93% project success rate</p>
-                    <div class="action-grid">
-                        <button class="pulse-btn primary" onclick="scrollTo('projects')">
-                            <i class="fas fa-rocket"></i> Launch Portfolio
-                        </button>
-                        <button class="pulse-btn secondary" onclick="scrollTo('contact')">
-                            <i class="fas fa-paper-plane"></i> Contact Mission
-                        </button>
-                    </div>
+            <div class="hero-text">
+                <h1 class="hero-title">Sumaiyya Ismail Nadaf</h1>
+                <p class="hero-subtitle">
+                    Computer Science Student | AI & Web Developer<br>
+                    Passionate about creating impactful technology solutions
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="container">
-                <h2 class="section-header cyber-header">
-                    <span class="header-line"></span>
-                    CORE SYSTEMS
-                    <span class="header-line"></span>
-                </h2>
-                <div class="stats-grid">
-                    <div class="stat-card" data-aos="zoom-in">
-                        <div class="stat-number" data-target="150">0</div>
-                        <div class="stat-label">Projects Deployed</div>
-                    </div>
-                    <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="stat-number" data-target="6">0</div>
-                        <div class="stat-label">Certifications</div>
-                    </div>
-                    <div class="stat-card" data-aos="zoom-in" data-aos-delay="400">
-                        <div class="stat-number" data-target="98">0</div>
-                        <div class="stat-label">Accuracy Rate</div>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Hi, I'm Sumaiyya</h3>
+                    <p>
+                        I'm a dedicated Computer Science student from Aurangabad, Maharashtra, 
+                        with a passion for Artificial Intelligence, Web Development, and innovative problem-solving. 
+                        I've completed national-level projects and earned certifications from leading platforms.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">9.2</span>
+                            <span class="stat-label">CGPA</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">6+</span>
+                            <span class="stat-label">Certifications</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
                     </div>
                 </div>
-                <div class="bio-panels">
-                    <div class="bio-panel">
-                        <h3>Education Matrix</h3>
-                        <ul>
-                            <li>B.Tech Computer Science - 9.2 CGPA</li>
-                            <li>AI/ML Specialization</li>
-                            <li>Aurangabad, Maharashtra</li>
-                        </ul>
-                    </div>
-                    <div class="bio-panel">
-                        <h3>Mission Objectives</h3>
-                        <ul>
-                            <li>AI Engineer @ Top Tech</li>
-                            <li>Open Source Contributor</li>
-                            <li>Build 10+ ML Products</li>
-                        </ul>
+                <div class="about-skills">
+                    <h4>Skills & Interests</h4>
+                    <div class="skills-grid">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Design Thinking</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section">
-            <div class="container">
-                <h2 class="section-header cyber-header">SKILL CONSTELLATION</h2>
-                <div class="skills-orbit">
-                    <div class="skill-item python" data-skill="Python">95%</div>
-                    <div class="skill-item react" data-skill="React">88%</div>
-                    <div class="skill-item nodejs" data-skill="Node.js">85%</div>
-                    <div class="skill-item tensorflow" data-skill="TensorFlow">90%</div>
-                    <!-- More skills orbiting -->
+    <!-- Achievements Section -->
+    <section id="achievements" class="section">
+        <div class="container">
+            <h2 class="section-title">Achievements & Certifications</h2>
+            <div class="achievements-grid">
+                <div class="achievement-item">
+                    <img src="images/ai4a-cert.jpg" alt="AI4A Certificate" class="achievement-img">
+                    <div class="achievement-info">
+                        <h4>AI4A Project Certificate</h4>
+                        <p>Developed ML model for agricultural yield prediction achieving 92% accuracy</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <img src="images/design-thinking-cert.jpg" alt="Design Thinking">
+                    <div class="achievement-info">
+                        <h4>Design Thinking Project</h4>
+                        <p>Created user-centered prototype solving urban mobility challenges</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <img src="images/ace-cert.jpg" alt="ACE Project">
+                    <div class="achievement-info">
+                        <h4>ACE Project</h4>
+                        <p>Led development of gamified educational platform</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <img src="images/coursera-cert.jpg" alt="Coursera">
+                    <div class="achievement-info">
+                        <h4>Coursera Certifications</h4>
+                        <p>Google Data Analytics & IBM AI Foundations</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <img src="images/netacad-cert.jpg" alt="Cisco NetAcad">
+                    <div class="achievement-info">
+                        <h4>Cisco Networking Academy</h4>
+                        <p>Networking Essentials & Python completed</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <img src="images/yuva-ai-cert.jpg" alt="Yuva AI">
+                    <div class="achievement-info">
+                        <h4>Yuva AI Certificate</h4>
+                        <p>National AI skill development program</p>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Achievements -->
-        <section id="achievements" class="section">
-            <div class="container">
-                <h2 class="section-header cyber-header">MISSION LOG</h2>
-                <div class="achievements-terminal">
-                    <div class="terminal-card" data-cert="ai4a">
-                        <div class="cert-header">
-                            <i class="fas fa-award"></i> AI4A Project
-                        </div>
-                        <div class="cert-details">
-                            <p>ML Model: 92% accuracy for agriculture</p>
-                            <img src="assets/ai4a-cert.jpg" alt="">
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/project1.jpg" alt="Project 1">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="link-demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="link-github"><i class="fab fa-github"></i></a>
+                            </div>
                         </div>
                     </div>
-                    <div class="terminal-card" data-cert="design">
-                        <div class="cert-header">
-                            <i class="fas fa-lightbulb"></i> Design Thinking
-                        </div>
-                        <div class="cert-details">
-                            <p>Urban mobility app prototype</p>
-                            <img src="assets/design-thinking-cert.jpg" alt="">
-                        </div>
-                    </div>
-                    <!-- Add ACE, Coursera, NetAcad, Yuva AI -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section (Detailed) -->
-        <section id="projects" class="section">
-            <div class="container">
-                <h2 class="section-header cyber-header">DEPLOYED MISSIONS</h2>
-                <div class="projects-terminal">
-                    <div class="project-module" data-aos="flip-left">
-                        <div class="project-header">
-                            <span class="project-id">#001</span>
-                            <h3>CropAI Predictor</h3>
-                        </div>
-                        <div class="project-screenshot">
-                            <img src="assets/project1.jpg" alt="">
-                        </div>
+                    <div class="project-content">
+                        <h3>Crop Yield Predictor</h3>
+                        <p>ML model using TensorFlow achieving 92% accuracy for agricultural predictions</p>
                         <div class="project-tech">
-                            <span>TensorFlow | Flask | Heroku</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn-link"><i class="fas fa-external-link-alt"></i></a>
-                            <a href="#" class="btn-link"><i class="fab fa-github"></i></a>
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                            <span>Flask</span>
                         </div>
                     </div>
-                    <!-- 5+ Detailed Projects -->
                 </div>
+                <!-- Add 4 more detailed projects -->
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Gallery -->
-        <section id="gallery" class="section">
-            <div class="container">
-                <h2 class="section-header cyber-header">PHOTO ARCHIVE</h2>
-                <div class="gallery-matrix">
-                    <!-- 20+ images with hover zoom -->
-                </div>
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background-image: url('images/gallery1.jpg');"></div>
+                <div class="gallery-item" style="background-image: url('images/gallery2.jpg');"></div>
+                <div class="gallery-item" style="background-image: url('images/ai4a-cert.jpg');"></div>
+                <!-- Add all your photos -->
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Contact Terminal -->
-        <section id="contact" class="section">
-            <div class="container">
-                <h2 class="section-header cyber-header">TRANSMISSION</h2>
-                <div class="contact-terminal">
-                    <form id="contactTerminal" class="terminal-form">
-                        <div class="form-group">
-                            <label>Name <span class="required">*</span></label>
-                            <input type="text" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Email <span class="required">*</span></label>
-                            <input type="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Message <span class="required">*</span></label>
-                            <textarea name="message" rows="6" required></textarea>
-                        </div>
-                        <button type="submit" class="terminal-btn">
-                            <span>TRANSMIT</span>
-                            <div class="btn-loader"></div>
-                        </button>
-                    </form>
-                    <div class="quick-links">
-                        <a href="mailto:sumaiyyanadaf99@gmail.com" class="quick-link">
-                            📧 sumaiyyanadaf99@gmail.com
-                        </a>
-                        <a href="tel:+919309883683" class="quick-link">
-                            📱 +91 9309883683
-                        </a>
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email</h4>
+                        <p>sumaiyyanadaf99@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <h4>Phone</h4>
+                        <p>+91 9309883683</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <h4>LinkedIn</h4>
+                        <p>/in/sumaiyya-nadaf</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <h4>GitHub</h4>
+                        <p>github.com/sumaiyyanadaf</p>
                     </div>
                 </div>
+                <form id="contactForm" class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="subject" placeholder="Subject" required>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
- </html>     
-
-    
+                                                                    </html>
+                          
