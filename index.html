@@ -1,197 +1,187 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sumaiyya Portfolio</title><style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumaiyya Ismail Nadaf - Student Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Dark Mode Toggle -->
+    <button id="darkToggle" class="dark-toggle"><i class="fas fa-moon"></i></button>
 
-body{
-background:linear-gradient(135deg,#1d2b64,#f8cdda);
-color:white;
-}
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Sumaiyya</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-nav{
-display:flex;
-justify-content:space-between;
-padding:20px 50px;
-background:rgba(255,255,255,0.1);
-backdrop-filter:blur(10px);
-position:sticky;
-top:0;
-}
+    <!-- Home Section -->
+    <section id="home" class="section hero">
+        <div class="hero-content">
+            <img src="images/profile.jpg" alt="Sumaiyya Ismail Nadaf" class="profile-img">
+            <h1 class="hero-title">Sumaiyya Ismail Nadaf</h1>
+            <p class="hero-subtitle">Aspiring Software Developer | AI Enthusiast | Passionate Learner from Aurangabad, Maharashtra</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
 
-nav h1{
-font-size:24px;
-}
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>Dynamic Computer Science student with strong foundation in AI, Web Development, and Design Thinking. Excelled in national-level projects and certifications from Coursera, Cisco NetAcad, and Yuva AI. Eager to contribute innovative solutions to forward-thinking teams.</p>
+                <div class="about-details">
+                    <div><i class="fas fa-graduation-cap"></i> B.Tech Computer Science</div>
+                    <div><i class="fas fa-heart"></i> Interests: AI/ML, Full-Stack Dev, Photography</div>
+                    <div><i class="fas fa-bullseye"></i> Goals: AI Engineer at Tech Giant</div>
+                    <div><i class="fas fa-star"></i> Strengths: Problem-Solving, Teamwork, Quick Learner</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-nav a{
-margin-left:20px;
-text-decoration:none;
-color:white;
-font-weight:500;
-transition:0.3s;
-}
+    <!-- Achievements Section -->
+    <section id="achievements" class="section">
+        <h2 class="section-title">Achievements & Certificates</h2>
+        <div class="achievements-grid">
+            <div class="achievement-card">
+                <img src="images/ai4a-cert.jpg" alt="AI4A Project">
+                <h3>AI4A Project</h3>
+                <p>Developed AI model for agricultural yield prediction using ML algorithms. Achieved 92% accuracy. [web:16]</p>
+            </div>
+            <div class="achievement-card">
+                <img src="images/design-thinking-cert.jpg" alt="Design Thinking">
+                <h3>Design Thinking Project</h3>
+                <p>Created user-centered app prototype solving urban mobility issues via empathetic design process. [web:12]</p>
+            </div>
+            <div class="achievement-card">
+                <img src="images/ace-cert.jpg" alt="ACE Project">
+                <h3>ACE Project</h3>
+                <p>Led team in building educational platform with gamified learning features. [web:13]</p>
+            </div>
+            <div class="achievement-card">
+                <img src="images/coursera-cert.jpg" alt="Coursera">
+                <h3>Coursera Certifications</h3>
+                <p>Google Data Analytics, IBM AI Foundations. [web:14]</p>
+            </div>
+            <div class="achievement-card">
+                <img src="images/netacad-cert.jpg" alt="Cisco NetAcad">
+                <h3>Cisco NetAcad</h3>
+                <p>Networking Essentials & Python Essentials completed. [web:15]</p>
+            </div>
+            <div class="achievement-card">
+                <img src="images/yuva-ai-cert.jpg" alt="Yuva AI">
+                <h3>Yuva AI Certificate</h3>
+                <p>Advanced AI for All - National skill program. [web:16]</p>
+            </div>
+        </div>
+    </section>
 
-nav a:hover{
-color:#ffeb3b;
-}
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="images/project1.jpg" alt="Project 1">
+                <div class="project-info">
+                    <h3>E-Commerce WebApp</h3>
+                    <p>Full-stack MERN app with payment integration, admin dashboard. Live: <a href="#">demo.com</a></p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="images/project2.jpg" alt="Project 2">
+                <div class="project-info">
+                    <h3>AI Chatbot</h3>
+                    <p>Custom NLP chatbot using TensorFlow for customer support. GitHub: <a href="#">github.com</a></p>
+                </div>
+            </div>
+            <!-- Add more projects -->
+        </div>
+    </section>
 
-.hero{
-height:90vh;
-display:flex;
-align-items:center;
-justify-content:center;
-flex-direction:column;
-text-align:center;
-}
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <h2 class="section-title">Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox('images/gallery1.jpg')">
+                <img src="images/gallery1.jpg" alt="Gallery 1">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('images/gallery2.jpg')">
+                <img src="images/gallery2.jpg" alt="Gallery 2">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('images/ai4a-cert.jpg')">
+                <img src="images/ai4a-cert.jpg" alt="AI4A Cert">
+            </div>
+            <!-- Add more gallery images -->
+        </div>
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <img id="lightbox-img" src="" alt="Lightbox">
+            <span class="close">&times;</span>
+        </div>
+    </section>
 
-.hero img{
-width:150px;
-border-radius:50%;
-border:4px solid white;
-margin-bottom:20px;
-}
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>sumaiyyanadaf99@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+91 9309883683</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>linkedin.com/in/sumaiyya-nadaf</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <span>github.com/sumaiyyanadaf</span>
+                </div>
+            </div>
+            <!-- EmailJS Contact Form -->
+            <form id="contact-form" class="contact-form">
+                <input type="text" name="user_name" placeholder="Your Name" required>
+                <input type="email" name="user_email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <input type="submit" value="Send Message" class="btn btn-primary">
+                <div id="form-status"></div>
+            </form>
+        </div>
+    </section>
 
-.hero h2{
-font-size:40px;
-}
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Sumaiyya Ismail Nadaf. Built with ❤️ for future opportunities.</p>
+    </footer>
 
-.hero span{
-color:#ffeb3b;
-}
-
-.hero p{
-max-width:600px;
-margin-top:10px;
-opacity:0.9;
-}
-
-section{
-padding:60px 10%;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-margin-top:30px;
-}
-
-.card{
-background:rgba(255,255,255,0.1);
-padding:20px;
-border-radius:15px;
-backdrop-filter:blur(10px);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-background:rgba(255,255,255,0.2);
-}
-
-.project img{
-width:100%;
-border-radius:10px;
-}
-
-.gallery{
-display:flex;
-flex-wrap:wrap;
-gap:15px;
-justify-content:center;
-}
-
-.gallery img{
-width:150px;
-border-radius:10px;
-transition:0.3s;
-}
-
-.gallery img:hover{
-transform:scale(1.1);
-}
-
-.contact{
-text-align:center;
-}
-
-footer{
-text-align:center;
-padding:20px;
-background:rgba(0,0,0,0.2);
-margin-top:40px;
-}
-
-</style></head><body><nav>
-<h1>Sumaiyya</h1>
-<div>
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#achievements">Achievements</a>
-<a href="#projects">Projects</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
-</div>
-</nav><section class="hero" id="home">
-<img src="assets/profile.jpg">
-<h2>Hello, I'm <span>Sumaiyya Nadaf</span></h2>
-<p>I am a B.Tech Computer Science student passionate about coding, web development, and becoming a full-stack developer. I am consistently working on improving my skills and aiming to achieve academic excellence and a high-paying tech career.</p>
-</section><section id="about">
-<h2>About Me</h2>
-<div class="grid">
-<div class="card">
-<h3>Education</h3>
-<p>B.Tech in Computer Science (First Year)</p>
-</div>
-<div class="card">
-<h3>Interests</h3>
-<p>Web Development, AI, Programming</p>
-</div>
-<div class="card">
-<h3>Goals</h3>
-<p>Become a top-level programmer and secure a high-paying job.</p>
-</div>
-<div class="card">
-<h3>Strengths</h3>
-<p>Consistency, Hard Work, Discipline</p>
-</div>
-</div>
-</section><section id="achievements">
-<h2>Achievements</h2>
-<div class="grid">
-<div class="card"><h3>AI Project (In Progress)</h3></div>
-<div class="card"><h3>ACE Project (In Progress)</h3></div>
-<div class="card"><h3>Coursera Certificate</h3></div>
-<div class="card"><h3>Netacad Certificate</h3></div>
-<div class="card"><h3>Yuva Certificate</h3></div>
-</div>
-</section><section id="projects">
-<h2>Projects</h2>
-<div class="grid">
-<div class="card project">
-<img src="assets/projects/project1.png">
-<p>Currently working on AI and programming-based projects. More projects will be added soon.</p>
-</div>
-</div>
-</section><section id="gallery">
-<h2>Gallery</h2>
-<div class="gallery">
-<img src="assets/gallery/img1.jpg">
-<img src="assets/gallery/img2.jpg">
-</div>
-</section><section id="contact" class="contact">
-<h2>Contact</h2>
-<p>Email: sumaiyyanadaf99@gmail.com</p>
-<p>Phone: 9309883683</p>
-<p>LinkedIn: sumaiyya nadaf</p>
-<p>GitHub: sumaiyyanadaf99@gmail.com</p>
-</section><footer>
-<p>© 2026 Sumaiyya Nadaf</p>
-</footer></body>
-</html>
+    <script src="script.js"></script>
+</body>
+                           </html>
