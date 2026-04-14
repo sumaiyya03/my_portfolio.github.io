@@ -1,108 +1,88 @@
-// Three.js Nebula Background
-let scene, camera, renderer, stars = [];
-function initNebula() {
-    const canvas = document.getElementById('bgCanvas');
-    scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    
-    // 500 Stars
-    for(let i = 0; i < 500; i++) {
-        const geometry = new THREE.SphereGeometry(0.5, 24, 24);
-        const material = new THREE.MeshBasicMaterial({ 
-            color: new THREE.Color().setHSL(Math.random() * 0.2 + 0.5, 0.75, Math.random() * 0.5 + 0.5)
-        });
-        stars[i] = new THREE.Mesh(geometry, material);
-        stars[i].position.x = Math.random() * 2000 - 1000;
-        stars[i].position.y = Math.random() * 2000 - 1000;
-        stars[i].position.z = Math.random() * 2000 - 1000;
-        scene.add(stars[i]);
-    }
-    
-    camera.position.z = 5;
-    animateStars();
-}
-function animateStars() {
-    stars.forEach(star => {
-        star.rotation.x += 0.001;
-        star.rotation.y += 0.002;
-        star.position.z += 0.5;
-        if(star.position.z > 1000) star.position.z = -1000;
-    });
-    renderer.render(scene, camera);
-    requestAnimationFrame(animateStars);
-}
-
-// EmailJS
+// EmailJS Configuration - REPLACE WITH YOUR CREDENTIALS
 emailjs.init('YOUR_PUBLIC_KEY');
 
-// Loader
-window.addEventListener('load', () => {
-    setTimeout(() => document.getElementById('loader').style.opacity = '0', 2000);
-    setTimeout(() => document.getElementById('loader').style.display = 'none', 2500);
-});
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    });
 
-// Navigation
-document.getElementById('menuToggle').onclick = () => {
-    document.getElementById('orbitalNav').classList.toggle('active');
-};
-
-// Voice Control
-const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-recognition.continuous = true;
-document.getElementById('voiceBtn').onclick = () => {
-    recognition.start();
-    document.querySelector('.voice-btn i').className = 'fas fa-stop';
-};
-recognition.onresult = (event) => {
-    const command = event.results[event.results.length - 1][0].transcript.toLowerCase();
-    if(command.includes('home')) scrollTo('hero');
-    if(command.includes('projects')) scrollTo('projects');
-    if(command.includes('contact')) scrollTo('contact');
-    // More voice commands
-};
-
-// Smooth Scroll
-function scrollTo(section) {
-    document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
-}
-
-// Copy Email
-function copyEmail() {
-    navigator.clipboard.writeText('sumaiyyanadaf99@gmail.com');
-    // Toast notification
-}
-
-// Counter Animation
-function animateCounters() {
-    document.querySelectorAll('.stat-number').forEach(counter => {
-        const target = +counter.dataset.target;
-        const count = +counter.innerText;
-        const increment = target / 100;
-        if(count < target) {
-            counter.innerText = Math.ceil(count + increment);
-            setTimeout(() => animateCounters(), 30);
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+        } else {
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
         }
     });
-}
 
-// Terminal Form
-document.getElementById('contactTerminal').onsubmit = (e) => {
-    e.preventDefault();
-    // EmailJS send
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target)
-        .then(() => {
-            alert('Transmission Successful! 🚀');
-            e.target.reset();
+    // Theme toggle
+    const themeToggle = document.querySelector('.theme-toggle');
+    const body = document.body;
+    
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark');
+        const icon = themeToggle.querySelector('i');
+        if (body.classList.contains('dark')) {
+            icon.className = 'fas fa-sun';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            icon.className = 'fas fa-moon';
+            localStorage.setItem('theme', 'light');
+        }
+    });
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+        body.classList.add('dark');
+        themeToggle.querySelector('i').className = 'fas fa-sun';
+    }
+
+    // Contact form
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // REPLACE SERVICE_ID and TEMPLATE_ID
+        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+            .then(function() {
+                alert('Thank you! Your message has been sent.');
+                this.reset();
+            }, function(error) {
+                alert('Oops! Something went wrong. Please try again.');
+                console.error('EmailJS error:', error);
+            });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
         });
-};
+    }, observerOptions);
 
-// Resize Handler
-window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    // Observe sections
+    document.querySelectorAll('.achievement-item, .project-card, .gallery-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.6s ease';
+        observer.observe(el);
+    });
 });
-
-initNebula();
