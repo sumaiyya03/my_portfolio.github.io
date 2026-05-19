@@ -33,7 +33,7 @@
   <!-- ═══════════════════════════ SCROLL PROGRESS ══════════════════════════ -->
   <div id="scroll-progress"></div>
 
-  <!-- ═══════════════════════════ NAVBAR ═══════════════════════════════════ --> 
+  <!-- ═══════════════════════════ NAVBAR ═══════════════════════════════════ -->
   <nav id="navbar">
     <div class="nav-brand">
       <span class="brand-s">S</span>umaiyya
@@ -47,16 +47,601 @@
       <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
     <div class="nav-actions">
-      <!-- Dark mode toggle -->
       <button id="themeToggle" aria-label="Toggle theme">
         <i class="fa-solid fa-moon" id="themeIcon"></i>
       </button>
-      <!-- Hamburger -->
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <!-- ═══════════════════════════ HERO SECTION ══════════════════════════════ --> 
-  
+  <!-- ═══════════════════════════ HERO SECTION ══════════════════════════════ -->
+  <section id="home" class="hero">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <canvas id="particlesCanvas"></canvas>
+
+    <div class="hero-inner">
+      <div class="hero-image-wrap reveal-left">
+        <div class="hero-img-ring">
+          <!-- Replace with your photo: assets/profile/profile.jpg -->
+          <img src="assets/profile/profile.jpg" alt="Sumaiyya Ismail Nadaf" class="hero-img" id="profileImg" />
+        </div>
+        <div class="hero-img-badge">✦ CSE '27</div>
+      </div>
+
+      <div class="hero-text reveal-right">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name">Sumaiyya<br /><em>Ismail Nadaf</em></h1>
+        <div class="typing-wrap">
+          <span class="typing-prefix">I am a </span>
+          <span class="typing-text" id="typingText"></span>
+          <span class="typing-cursor">|</span>
+        </div>
+        <p class="hero-bio">
+          A passionate CSE student on a journey of creativity, code, and curiosity.
+          Building beautiful things one pixel at a time. 🌸
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary ripple">
+            <i class="fa-solid fa-rocket"></i> View Projects
+          </a>
+          <a href="assets/resume/resume.pdf" class="btn btn-outline" download>
+            <i class="fa-solid fa-download"></i> Download Resume
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num" data-target="5">0</span>+
+            <span class="stat-label">Certificates</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-target="4">0</span>+
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-target="3">0</span>+
+            <span class="stat-label">Skills</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ ABOUT SECTION ═════════════════════════════ -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">✦ Get to Know Me</span>
+        <h2 class="section-title">About <em>Me</em></h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <!-- Education -->
+        <div class="about-card card-glass reveal-up" style="--delay:0.1s">
+          <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3>Education</h3>
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-body">
+                <strong>B.E. Computer Science Engineering</strong>
+                <p>KLE Technological University · 2023–2027</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-body">
+                <strong>12th Science (PCMB)</strong>
+                <p>Government PU College · 2022–2023</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-body">
+                <strong>10th SSLC</strong>
+                <p>Government High School · 2020–2021</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Career Goals -->
+        <div class="about-card card-glass reveal-up" style="--delay:0.2s">
+          <div class="card-icon"><i class="fa-solid fa-star"></i></div>
+          <h3>Career Goals</h3>
+          <ul class="goal-list">
+            <li><i class="fa-solid fa-heart-pulse"></i> Become a skilled Full-Stack Developer</li>
+            <li><i class="fa-solid fa-brain"></i> Explore AI & Machine Learning</li>
+            <li><i class="fa-solid fa-palette"></i> Blend creativity with technology</li>
+            <li><i class="fa-solid fa-earth-asia"></i> Build impactful digital solutions</li>
+            <li><i class="fa-solid fa-award"></i> Contribute to open-source projects</li>
+          </ul>
+        </div>
+
+        <!-- Strengths -->
+        <div class="about-card card-glass reveal-up" style="--delay:0.3s">
+          <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+          <h3>Strengths</h3>
+          <div class="strength-chips">
+            <span class="chip">Creative Thinker</span>
+            <span class="chip">Quick Learner</span>
+            <span class="chip">Problem Solver</span>
+            <span class="chip">Team Player</span>
+            <span class="chip">Detail-Oriented</span>
+            <span class="chip">Communicator</span>
+          </div>
+        </div>
+
+        <!-- Hobbies & Interests -->
+        <div class="about-card card-glass reveal-up" style="--delay:0.4s">
+          <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <h3>Hobbies & Interests</h3>
+          <div class="hobbies-grid">
+            <div class="hobby"><i class="fa-solid fa-pen-nib"></i><span>Sketching</span></div>
+            <div class="hobby"><i class="fa-solid fa-music"></i><span>Music</span></div>
+            <div class="hobby"><i class="fa-solid fa-book-open"></i><span>Reading</span></div>
+            <div class="hobby"><i class="fa-solid fa-code"></i><span>Coding</span></div>
+            <div class="hobby"><i class="fa-solid fa-camera"></i><span>Photography</span></div>
+            <div class="hobby"><i class="fa-solid fa-seedling"></i><span>Gardening</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="skills-section reveal-up">
+        <h3 class="skills-title">✦ Skills & Tools</h3>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <div class="skill-header">
+              <span><i class="fa-brands fa-html5"></i> HTML5</span><span>85%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span><i class="fa-brands fa-css3-alt"></i> CSS3</span><span>80%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span><i class="fa-brands fa-js"></i> JavaScript</span><span>65%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span><i class="fa-brands fa-github"></i> GitHub</span><span>75%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span><i class="fa-solid fa-robot"></i> AI Tools</span><span>80%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span><i class="fa-solid fa-pen-ruler"></i> Canva</span><span>90%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span><i class="fa-solid fa-comments"></i> Communication</span><span>88%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span><i class="fa-solid fa-calculator"></i> Discrete Math</span><span>78%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ ACHIEVEMENTS SECTION ═══════════════════════════ -->
+  <section id="achievements" class="section achievements-section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">✦ My Milestones</span>
+        <h2 class="section-title">Achievements &amp; <em>Certificates</em></h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="cert-masonry" id="certGrid">
+
+        <!-- Certificate 1 -->
+        <div class="cert-card reveal-up" style="--delay:0.1s" onclick="openCertModal(0)">
+          <img src="assets/certificates/discrete_math.jpg" alt="Discrete Mathematics for CS Specialization" class="cert-img" />
+          <div class="cert-overlay">
+            <div class="cert-info">
+              <span class="cert-badge"><i class="fa-solid fa-award"></i> Specialization</span>
+              <h4>Intro to Discrete Mathematics for CS</h4>
+              <p>UC San Diego · Coursera · 5 Courses</p>
+              <span class="cert-date"><i class="fa-regular fa-calendar"></i> May 1, 2026</span>
+            </div>
+            <div class="cert-view"><i class="fa-solid fa-expand"></i></div>
+          </div>
+        </div>
+
+        <!-- Certificate 2 -->
+        <div class="cert-card reveal-up" style="--delay:0.2s" onclick="openCertModal(1)">
+          <img src="assets/certificates/math_thinking.jpg" alt="Mathematical Thinking in CS" class="cert-img" />
+          <div class="cert-overlay">
+            <div class="cert-info">
+              <span class="cert-badge"><i class="fa-solid fa-certificate"></i> Course</span>
+              <h4>Mathematical Thinking in CS</h4>
+              <p>UC San Diego · Coursera</p>
+              <span class="cert-date"><i class="fa-regular fa-calendar"></i> Apr 30, 2026</span>
+            </div>
+            <div class="cert-view"><i class="fa-solid fa-expand"></i></div>
+          </div>
+        </div>
+
+        <!-- Certificate 3 -->
+        <div class="cert-card reveal-up" style="--delay:0.3s" onclick="openCertModal(2)">
+          <img src="assets/certificates/combinatorics.jpg" alt="Combinatorics and Probability" class="cert-img" />
+          <div class="cert-overlay">
+            <div class="cert-info">
+              <span class="cert-badge"><i class="fa-solid fa-certificate"></i> Course</span>
+              <h4>Combinatorics and Probability</h4>
+              <p>UC San Diego · Coursera</p>
+              <span class="cert-date"><i class="fa-regular fa-calendar"></i> Apr 29, 2026</span>
+            </div>
+            <div class="cert-view"><i class="fa-solid fa-expand"></i></div>
+          </div>
+        </div>
+
+        <!-- Certificate 4 -->
+        <div class="cert-card reveal-up" style="--delay:0.4s" onclick="openCertModal(3)">
+          <img src="assets/certificates/graph_theory.jpg" alt="Introduction to Graph Theory" class="cert-img" />
+          <div class="cert-overlay">
+            <div class="cert-info">
+              <span class="cert-badge"><i class="fa-solid fa-certificate"></i> Course</span>
+              <h4>Introduction to Graph Theory</h4>
+              <p>UC San Diego · Coursera</p>
+              <span class="cert-date"><i class="fa-regular fa-calendar"></i> Apr 29, 2026</span>
+            </div>
+            <div class="cert-view"><i class="fa-solid fa-expand"></i></div>
+          </div>
+        </div>
+
+        <!-- Certificate 5 -->
+        <div class="cert-card reveal-up" style="--delay:0.5s" onclick="openCertModal(4)">
+          <img src="assets/certificates/delivery_problem.jpg" alt="Delivery Problem" class="cert-img" />
+          <div class="cert-overlay">
+            <div class="cert-info">
+              <span class="cert-badge"><i class="fa-solid fa-certificate"></i> Course</span>
+              <h4>Delivery Problem</h4>
+              <p>UC San Diego · Coursera</p>
+              <span class="cert-date"><i class="fa-regular fa-calendar"></i> Apr 28, 2026</span>
+            </div>
+            <div class="cert-view"><i class="fa-solid fa-expand"></i></div>
+          </div>
+        </div>
+
+        <!-- Placeholder: AI4A -->
+        <div class="cert-card cert-placeholder reveal-up" style="--delay:0.6s">
+          <div class="placeholder-inner">
+            <i class="fa-solid fa-robot"></i>
+            <p>AI4A Project Certificate</p>
+            <span>Coming Soon</span>
+          </div>
+        </div>
+
+        <!-- Placeholder: Design Thinking -->
+        <div class="cert-card cert-placeholder reveal-up" style="--delay:0.7s">
+          <div class="placeholder-inner">
+            <i class="fa-solid fa-lightbulb"></i>
+            <p>Design Thinking Certificate</p>
+            <span>Coming Soon</span>
+          </div>
+        </div>
+
+        <!-- Placeholder: Cisco -->
+        <div class="cert-card cert-placeholder reveal-up" style="--delay:0.8s">
+          <div class="placeholder-inner">
+            <i class="fa-solid fa-network-wired"></i>
+            <p>Cisco NetAcad Certificate</p>
+            <span>Coming Soon</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ PROJECTS SECTION ══════════════════════════ -->
+  <section id="projects" class="section projects-section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">✦ My Work</span>
+        <h2 class="section-title">Featured <em>Projects</em></h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project-card reveal-up" style="--delay:0.1s">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder">
+              <i class="fa-solid fa-robot"></i>
+              <span>AI4A Project</span>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link-btn"><i class="fa-brands fa-github"></i></a>
+              <a href="#" class="project-link-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>AI4A Project</h3>
+            <p>An innovative AI-powered project exploring artificial intelligence applications for accessibility and education.</p>
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">AI/ML</span>
+              <span class="tech-tag">Data</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal-up" style="--delay:0.2s">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder">
+              <i class="fa-solid fa-pencil-ruler"></i>
+              <span>Design Thinking</span>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link-btn"><i class="fa-brands fa-github"></i></a>
+              <a href="#" class="project-link-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Design Thinking Project</h3>
+            <p>Human-centered design project applying empathy, ideation, and prototyping to solve real-world problems.</p>
+            <div class="tech-stack">
+              <span class="tech-tag">Figma</span>
+              <span class="tech-tag">Canva</span>
+              <span class="tech-tag">UX</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal-up" style="--delay:0.3s">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder">
+              <i class="fa-solid fa-flask"></i>
+              <span>ACE Project</span>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link-btn"><i class="fa-brands fa-github"></i></a>
+              <a href="#" class="project-link-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>ACE Project</h3>
+            <p>An Academic and Co-curricular Excellence project showcasing technical and soft-skill development milestones.</p>
+            <div class="tech-stack">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal-up" style="--delay:0.4s">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder" style="background: linear-gradient(135deg, var(--blush), var(--lavender));">
+              <i class="fa-solid fa-briefcase"></i>
+              <span>Portfolio Website</span>
+            </div>
+            <div class="project-overlay">
+              <a href="https://github.com/" class="project-link-btn" target="_blank"><i class="fa-brands fa-github"></i></a>
+              <a href="#home" class="project-link-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Digital Portfolio Website</h3>
+            <p>This very portfolio — a fully responsive, animated personal website built with pure HTML, CSS & JavaScript.</p>
+            <div class="tech-stack">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">Vanilla JS</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ GALLERY SECTION ═══════════════════════════ -->
+  <section id="gallery" class="section gallery-section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">✦ My World</span>
+        <h2 class="section-title">Photo <em>Gallery</em></h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="gallery-filters reveal-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="certificates">Certificates</button>
+        <button class="filter-btn" data-filter="events">Events</button>
+        <button class="filter-btn" data-filter="personal">Personal</button>
+        <button class="filter-btn" data-filter="projects">Projects</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+
+        <div class="gallery-item personal" onclick="openGalleryLightbox(this)">
+          <img src="assets/profile/profile.jpg" alt="Sumaiyya" class="gallery-img" />
+          <div class="gallery-item-overlay"><i class="fa-solid fa-expand"></i></div>
+        </div>
+        <div class="gallery-item certificates" onclick="openGalleryLightbox(this)">
+          <img src="assets/certificates/discrete_math.jpg" alt="Discrete Math" class="gallery-img" />
+          <div class="gallery-item-overlay"><i class="fa-solid fa-expand"></i></div>
+        </div>
+        <div class="gallery-item certificates" onclick="openGalleryLightbox(this)">
+          <img src="assets/certificates/math_thinking.jpg" alt="Math Thinking" class="gallery-img" />
+          <div class="gallery-item-overlay"><i class="fa-solid fa-expand"></i></div>
+        </div>
+        <div class="gallery-item certificates" onclick="openGalleryLightbox(this)">
+          <img src="assets/certificates/combinatorics.jpg" alt="Combinatorics" class="gallery-img" />
+          <div class="gallery-item-overlay"><i class="fa-solid fa-expand"></i></div>
+        </div>
+        <div class="gallery-item certificates" onclick="openGalleryLightbox(this)">
+          <img src="assets/certificates/graph_theory.jpg" alt="Graph Theory" class="gallery-img" />
+          <div class="gallery-item-overlay"><i class="fa-solid fa-expand"></i></div>
+        </div>
+        <div class="gallery-item certificates" onclick="openGalleryLightbox(this)">
+          <img src="assets/certificates/delivery_problem.jpg" alt="Delivery Problem" class="gallery-img" />
+          <div class="gallery-item-overlay"><i class="fa-solid fa-expand"></i></div>
+        </div>
+
+        <!-- Add your event/project/personal photos below -->
+        <div class="gallery-item events gallery-placeholder">
+          <div class="placeholder-gallery"><i class="fa-solid fa-images"></i><span>Event Photo 1<br/><small>assets/gallery/event1.jpg</small></span></div>
+        </div>
+        <div class="gallery-item events gallery-placeholder">
+          <div class="placeholder-gallery"><i class="fa-solid fa-users"></i><span>Event Photo 2<br/><small>assets/gallery/event2.jpg</small></span></div>
+        </div>
+        <div class="gallery-item projects gallery-placeholder">
+          <div class="placeholder-gallery"><i class="fa-solid fa-code"></i><span>Project Photo<br/><small>assets/gallery/project1.jpg</small></span></div>
+        </div>
+        <div class="gallery-item personal gallery-placeholder">
+          <div class="placeholder-gallery"><i class="fa-solid fa-camera"></i><span>Personal Photo<br/><small>assets/gallery/personal2.jpg</small></span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ CONTACT SECTION ═══════════════════════════ -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">✦ Say Hello</span>
+        <h2 class="section-title">Let's <em>Connect</em></h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal-left">
+          <p class="contact-lead">I'd love to hear from you! Whether you have a question, collaboration idea, or just want to say hi 🌸</p>
+          <div class="contact-links">
+            <a href="mailto:sumaiyya@example.com" class="contact-link">
+              <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div><strong>Email</strong><span>sumaiyya@example.com</span></div>
+            </a>
+            <a href="tel:+91XXXXXXXXXX" class="contact-link">
+              <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+              <div><strong>Phone</strong><span>+91 XXXXXXXXXX</span></div>
+            </a>
+            <a href="https://linkedin.com/in/" target="_blank" class="contact-link">
+              <div class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+              <div><strong>LinkedIn</strong><span>sumaiyya-ismail-nadaf</span></div>
+            </a>
+            <a href="https://github.com/" target="_blank" class="contact-link">
+              <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
+              <div><strong>GitHub</strong><span>sumaiyya-nadaf</span></div>
+            </a>
+            <a href="https://instagram.com/" target="_blank" class="contact-link">
+              <div class="contact-icon"><i class="fa-brands fa-instagram"></i></div>
+              <div><strong>Instagram</strong><span>@sumaiyya_nadaf</span></div>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap reveal-right">
+          <div class="form-group float-label">
+            <input type="text" id="nameInput" placeholder=" " required />
+            <label for="nameInput">Your Name</label>
+          </div>
+          <div class="form-group float-label">
+            <input type="email" id="emailInput" placeholder=" " required />
+            <label for="emailInput">Your Email</label>
+          </div>
+          <div class="form-group float-label">
+            <input type="text" id="subjectInput" placeholder=" " required />
+            <label for="subjectInput">Subject</label>
+          </div>
+          <div class="form-group float-label">
+            <textarea id="messageInput" rows="5" placeholder=" " required></textarea>
+            <label for="messageInput">Your Message</label>
+          </div>
+          <button class="btn btn-primary ripple full-btn" id="sendBtn" onclick="sendMessage()">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+          <div id="formSuccess" class="form-success" style="display:none">
+            <i class="fa-solid fa-circle-check"></i> Message sent! I'll get back to you soon 🌸
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner container">
+      <p class="footer-quote">"Code is like poetry — it's not just about what it does, but how elegantly it does it." 🌸</p>
+      <div class="footer-socials">
+        <a href="https://github.com/" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://instagram.com/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="mailto:sumaiyya@example.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+      <p class="footer-copy">© 2026 Sumaiyya Ismail Nadaf · Crafted with <span style="color:var(--rose)">♥</span> &amp; lots of ☕</p>
+    </div>
+    <button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+  </footer>
+
+  <!-- Certificate Modal -->
+  <div id="certModal" class="modal-overlay" onclick="closeCertModal(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeCertModal()"><i class="fa-solid fa-xmark"></i></button>
+      <img id="modalImg" src="" alt="" class="modal-img" />
+      <div class="modal-info">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc"></p>
+        <span id="modalDate" class="cert-date"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gallery Lightbox -->
+  <div id="galleryLightbox" class="modal-overlay" onclick="closeGalleryLightbox(event)">
+    <div class="lightbox-box">
+      <button class="modal-close" onclick="closeGalleryLightbox()"><i class="fa-solid fa-xmark"></i></button>
+      <img id="lightboxImg" src="" alt="" />
+    </div>
+  </div>
+
+  <!-- Floating Action Button -->
+  <div class="fab-wrap">
+    <button class="fab-main" id="fabBtn">
+      <i class="fa-solid fa-sparkles"></i>
+    </button>
+    <div class="fab-actions" id="fabActions">
+      <a href="#home" class="fab-action" title="Home"><i class="fa-solid fa-house"></i></a>
+      <a href="assets/resume/resume.pdf" class="fab-action" title="Resume" download><i class="fa-solid fa-file"></i></a>
+      <a href="mailto:sumaiyya@example.com" class="fab-action" title="Email"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
